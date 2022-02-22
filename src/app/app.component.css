@@ -1,0 +1,19 @@
+.img1,.img3{  
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    padding: 3px;
+
+    }
+.img2{  
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    height: auto;
+    }
+
+
+h3 {
+    text-align:center;
+}
