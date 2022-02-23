@@ -1,4 +1,4 @@
-<form action="action_page.php">
+<form>
     <div class="container">
     <style>
         h1,p{
@@ -9,34 +9,38 @@
       
       <p>Please fill in this form to create an account.</p>
       <hr>
-  
+
+
+      <div *ngIf='alert' class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Registered Successfully! </h4>
+      </div>
+
+      <label for="Type"><b>Type Of Registration :</b></label>
+      <select name="option"  id="type" class="dropdown" required>
+        <option value="User">User</option>
+        <option value="Admin">Admin</option>
+      </select>
+      <br>
+      <br>
       <label for="email"><b>Email</b></label>
       <input type="text" placeholder="Enter Email" name="email" id="email" required>
 
-      <label for="phone">Mobile Number</label>
+      <label for="phone"><b>Mobile Number</b></label>
       <input type="tel" id="phone" placeholder="Enter your Mobile Number" pattern="[1-9]{1}[0-9]{9}" required>
   
       <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" id="psw" onChange="onChange()" required>
+      <input type="password" placeholder="Enter Password" name="psw" class="psw" required>
   
       <label for="psw-repeat"><b>Confirm Password</b></label>
-      <input type="password" placeholder="Confirm Password" name="psw-repeat" id="psw-repeat" onChange="onChange()" required>
+      <input type="password" placeholder="Confirm Password" name="psw-repeat" class="psw-repeat" required>
       <hr>
-      <script>
-        function onChange() {
-        const password = document.querySelector('input[name=psw]');
-        const confirm = document.querySelector('input[name=psw-repeat]');
-        if (confirm.value === password.value) {
-          confirm.setCustomValidity('');
-          } else {
-              confirm.setCustomValidity('Passwords do not match');
-          }
-      }
-    </script>
-      <button type="submit" class="registerbtn">Register</button>
+    <div class="alert alert-success" role="alert">
+      <button (click)= "onsubmit()" type="submit" class="registerbtn">Register</button>
+    </div>
     </div>
   
-    <div class="container signin">
+    <div>
+        <input type="reset" value="Reset">
       <p>Already have an account? <a routerLink="signin" routerLinkActive="active">Sign in</a>.</p>
     </div>
   </form>

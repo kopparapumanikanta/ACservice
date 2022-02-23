@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-
+  alert:boolean=false
   constructor() { }
-
   ngOnInit(): void {
+    this.alert=false
   }
-
+  onsubmit(){
+    this.alert=true
+  }
 }
